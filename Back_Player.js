@@ -10,7 +10,7 @@ imgBackground.src = "background.png";
 
 
 var imgPlayer = new Image();
-imgPlayer.src = "size_spongebob.png";
+imgPlayer.src = "spongebob.png";
 
 imgPlayer.addEventListener("load", drawScreen, false);
 
@@ -18,7 +18,7 @@ function drawScreen(){
 	var theCanvas = document.getElementById("GameCanvas");
 	var Context = theCanvas.getContext("2d");
 	Context.drawImage(imgBackground,0,0,1000,700);
-	Context.drawImage(imgPlayer,350,250,80,100);
+	Context.drawImage(imgPlayer,300,250,20,30);
 }
 
 window.addEventListener("load",drawScreen,false);
@@ -29,7 +29,7 @@ window.addEventListener("mousedown",onMouseDown,false);
 window.addEventListener("mouseup",onMouseUp,false);
 
 var imgPlayer = new Image();
-imgPlayer.src = "size_spongebob.png";
+imgPlayer.src = "spongebob.png";
 imgPlayer.addEventListener("load",drawScreen,false);
 
 var strKeyEventType = "None";
@@ -39,16 +39,16 @@ function drawScreen(){
 	var theCanvas = document.getElementById("GameCanvas");
 	var Context = theCanvas.getContext("2d");
 	Context.drawImage(imgBackground,0,0,1000,700);
-	Context.drawImage(imgPlayer,350,250,50,55);
-	/*Context.Style = "#00f";
+	Context.drawImage(imgPlayer,300,250,20,30);
+	Context.Style = "#00f";
 	Context.font = '24px nanumgothic';
 	Context.textBaseline = "top";
 	Context.fillText("입력된 키는 :" + strKeyEventValue,5,5);
-	Context.fillText("키 입력 상태는 : " + strKeyEventType,5,30);*/
+	Context.fillText("키 입력 상태는 : " + strKeyEventType,5,30);
 	/*Context.fillStyle = "#ff0";
 	Context.fillRect(0,0,1074,768);*/
 	Context.drawImage(imgBackground,0,0,1000,700);
-	Context.drawImage(imgPlayer, intMouseX, intMouseY);
+	Context.drawImage(imgPlayer, intMouseX, intMouseY,40,50);
 	Context.fillStyle = "#000000";
 	Context.font = '24px Arial';
 	Context.textBaseline = "top";
@@ -87,7 +87,7 @@ function onMouseUp(e) {
 	drawScreen();
 }
 
-/*function onkeydown(e)
+function onkeydown(e)
 {
 	strKeyEventType = e.type;
 	if(e.keyCode)code = e.keyCode;
@@ -101,4 +101,4 @@ function onkeyup(e)
 	if(e.keyCode)code = e.keyCode;
 	strKeyEventValue = String.fromCharCode(code);
 	drawScreen();
-}*/
+}
